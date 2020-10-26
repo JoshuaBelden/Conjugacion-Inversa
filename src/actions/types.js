@@ -1,0 +1,1 @@
+export const VERBOS_CARGADOS = 'VERBOS_CARGADOS';
