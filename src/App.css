@@ -138,7 +138,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 h1 {
 	font-size: 2.5em;
-	line-height: 1.5em;
+	line-height: 1.0em;
 	letter-spacing: -0.035em;
 }
 
@@ -515,7 +515,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 }
 
 .page-header .container {
-  display: flex;
+  /* display: flex; */
 }
 
 .page-header .container .title {
@@ -542,7 +542,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 }
 
 .container {
-	flex-grow: 1;
+	/* flex-grow: 1; */
 	margin: 10px;
 }
 
@@ -657,6 +657,20 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 
 .box .vertical-callout strong {
   font-weight: 800;
+}
+
+.verbo-contenedor {
+	display: flex;
+	min-height: 200px;
+}
+
+.verbo-conjugado {
+	min-width: 200px;
+}
+
+.opciones-tenso {
+	display:flex;
+
 }
 
 #footer {
