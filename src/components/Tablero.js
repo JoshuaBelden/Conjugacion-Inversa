@@ -2,13 +2,37 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { obtenerVerbos } from '../actions/verbos';
 
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const ComponenteAudio = (params) => {
+
+    if (!params.audioSrc) {
+        return <Fragment></Fragment>;
+    }
+
+    const playAudio = () => {
+        var elem = document.getElementById('audio-element-params-' + params.audioSrc);
+        elem.play();
+    }
+
+    return <Fragment>
+        <audio id={"audio-element-params-" + params.audioSrc} className="audio-element">
+            <source src="https://audio1.spanishdict.com/audio?lang=es&format=mp3&text={params.audioSrc}"></source>
+        </audio>
+        <FontAwesomeIcon onClick={(e) => playAudio()} icon={faPlay}></FontAwesomeIcon>
+    </Fragment>;
+}
+
 const ComponenteVerbo = (params) => {
     if (!params.verboSeleccionado) {
         return <Fragment></Fragment>;
     }
 
+    const verbo = obtenerFormaDelVerbo(params.formaSeleccionada, params.verboSeleccionado);
+
     return <Fragment>
-        <h2>{obtenerFormaDelVerbo(params.formaSeleccionada, params.verboSeleccionado)}</h2>
+        <h2>{verbo}</h2>
     </Fragment>;
 };
 
