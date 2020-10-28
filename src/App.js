@@ -4,6 +4,7 @@ import React from 'react';
 import store from './store';
 
 import Tablero from './components/Tablero';
+import Infinitive from './components/Infinitive';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ const App = () => {
 			<Router>
 				<Switch>
 					<Route exact path="/" component={Tablero} />
+					<Route exact path="/verb/:infinitive" component={Infinitive} />
 				</Switch>
 			</Router>
 		</Provider>

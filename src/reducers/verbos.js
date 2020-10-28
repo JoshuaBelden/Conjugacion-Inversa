@@ -1,4 +1,4 @@
-import { VERBOS_CARGADOS } from '../actions/types';
+import { VERBOS_CARGADOS, CONJUGATIONS_LOADED } from '../actions/types';
 
 const estadoInicial = {
     verbos: null
@@ -11,6 +11,11 @@ export default function (estado = estadoInicial, acción) {
             return {
                 ...estado,
                 verbos: payload
+            };
+        case CONJUGATIONS_LOADED:
+            return {
+                ...estado,
+                conjugations: payload
             };
         default:
             return estado;
