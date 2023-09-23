@@ -1,0 +1,42 @@
+.conjugation-practice {
+  .audio-player {
+    width: 18px;
+    margin: 4px;
+    padding-top: 16px;
+    cursor: pointer;
+  }
+
+  &-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
+
+    label {
+      font-weight: 500;
+    }
+  }
+
+  &-controls {
+    display: flex;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &-results {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &-conjugated {
+    margin-right: 16px;
+  }
+
+  h3 em {
+    font-size: 16px;
+  }
+}

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import datoDeVerbos from './verbos';
+import verbs from './verbs';
 
 export default combineReducers({
-    datoDeVerbos
+  data: verbs,
 });

@@ -1,0 +1,19 @@
+.verb {
+  &-conjugation-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      min-width: 200px;
+    }
+  }
+
+  &-conjugation {
+    padding: 4px;
+    margin-bottom: 16px;
+    label {
+      font-size: 14px;
+    }
+    border-left: solid 1px #dadada;
+  }
+}
