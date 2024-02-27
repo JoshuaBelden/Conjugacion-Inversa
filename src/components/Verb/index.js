@@ -19,7 +19,7 @@ const Verb = ({ verbs, getVerbs }) => {
     if (infinitive && verbs) {
       selectSearchResult(infinitive);
     }
-  }, [getVerbs, verbs]);
+  }, []);
 
   const buildViewData = (infinitive) => {
     if (!infinitive) throw new Error('Infinitive is required.');
@@ -89,18 +89,22 @@ const Verb = ({ verbs, getVerbs }) => {
       verb.gerund.match(`.*${searchTerm}.*`) ||
       verb.verb_english.match(`.*${searchTerm}.*`)
     );
-  }
+  };
 
   const search = () => {
     setSearchResults([]);
 
-    const results = verbs
-      .filter((verb) => filter(verb, searchTermRef.current.value))
-      .map((verb) => verb.infinitive)
-      .filter((value, index, array) => array.indexOf(value) === index);
+    const results = verbs.filter((verb) =>
+      filter(verb, searchTermRef.current.value)
+    );
 
-    if (results.length) {
-      setSearchResults(results);
+    const r2 = results.map((verb) => verb.infinitive);
+    const r3 = r2.filter(
+      (value, index, array) => array.indexOf(value) === index
+    );
+
+    if (r3.length) {
+      setSearchResults(r3);
     }
   };
 
@@ -128,7 +132,9 @@ const Verb = ({ verbs, getVerbs }) => {
     setViewData(buildViewData(infinitive));
   };
 
-  return (
+  return !verbs ? (
+    <div>loading...</div>
+  ) : (
     <div className="verb">
       <div>{renderSearch()}</div>
       <div>{searchResults && renderSearchResults()}</div>
